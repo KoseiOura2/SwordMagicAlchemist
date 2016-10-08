@@ -1,0 +1,21 @@
+#pragma once
+
+#include "smart_ptr.h"
+#include "mathematics.h"
+
+PTR( Camera );
+PTR( Player );
+
+class Camera {
+public:
+	Camera( const PlayerPtr player );
+	~Camera( );
+	virtual void initialize( );
+	virtual void finalize( );
+	void update( ); 
+private:									
+	Vector _pos;							// 3Dç¿ïW
+	Vector _target;							// íçéãì_ÇÃç¿ïW
+	PlayerPtr _player;					
+};
+
